@@ -49,6 +49,13 @@ if(allRepos != null){
 			ul li a:visited {
 				color: #8e32dc;
 			}
+			hr.rounded {
+				border-top: 8px solid #bbb;
+				border-radius: 5px;
+			}
+			article{
+				background-color: lightslategray;
+			}
 		</style>
 	</head>
 	<body>
@@ -58,7 +65,7 @@ if(allRepos != null){
 				<ul>
 					{
 						contentList != null && contentList.length !== 0 ? (contentList.map((value,index,array)=>{
-							return <article set:html={value} />
+							return <div><article set:html={value}/> <hr> </div>;
 						})): (<h1>Error Loading Github Repos</h1>)
 					}
 				</ul>
