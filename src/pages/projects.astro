@@ -54,7 +54,7 @@ if(allRepos != null){
 				border-radius: 5px;
 			}
 			article{
-				background-color: lightslategray;
+				background-color: lightskyblue;
 			}
 		</style>
 	</head>
@@ -64,9 +64,9 @@ if(allRepos != null){
 			<section>
 				<ul>
 					{
-						contentList != null && contentList.length !== 0 ? (contentList.map((value,index,array)=>{
+						contentList.length !== 0 ? (contentList.map((value,index,array)=>{
 							return <div><article set:html={value}/> <hr> </div>;
-						})): (<h1>Error Loading Github Repos</h1>)
+						})): (<h1>Encountering API Rate Limit for Github Repos</h1>)
 					}
 				</ul>
 			</section>
