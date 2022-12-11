@@ -1,4 +1,17 @@
-# Personal Website
----
-This is the repo for my personal developer website to showcase my work with the world. This project was written in Javascript using the newest framework **Astro**.
-I leverage the Github APIs to programmatically load in my most current projects Read Me's to show what I am up to today and anytime down the line. 
+# personal-project
+
+```
+npm create astro@latest -- --template blog
+```
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
