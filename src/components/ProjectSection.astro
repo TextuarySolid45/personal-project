@@ -1,0 +1,114 @@
+---
+import { marked } from "marked";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+async function getReadMe(name: string) {
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/TextuarySolid45/" +
+        name +
+        "/main/README.website.md"
+    );
+    const markdown = await response.text();
+    return marked.parse(markdown);
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+async function getAllRepos() {
+  try {
+    const allPublicReposResponse = await fetch(
+      "https://api.github.com/users/TextuarySolid45/repos?sort=created&direction=desc"
+    );
+    const status = allPublicReposResponse.status;
+    console.info(allPublicReposResponse.json());
+    return status == 200 ? await allPublicReposResponse.json() : null;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+const allRepos = await getAllRepos();
+console.log(allRepos);
+var contentList: string[] = [];
+if (allRepos != null) {
+  for (var repo of allRepos) {
+    const content = await getReadMe(repo.name);
+    if (content) {
+      console.log(content);
+      contentList.push(content);
+    } else {
+      console.log("null content");
+    }
+  }
+}
+---
+
+<section>
+  <h1>Projects</h1>
+  <button id="buttons">What is going on here?</button>
+  <script>
+    function handleClick() {
+      var x = document.getElementById("projectSection");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      console.log("button clicked.");
+    }
+    let doc = document.getElementById("buttons");
+    if (doc) {
+      doc.addEventListener("click", handleClick);
+    }
+  </script>
+  <h3 id="projectSection" style="display : none;">
+    Below are a list of ReadMe.md files that I pull from all the PUBLIC
+    repositories in my Github account. The reason I did this was so that I do
+    not have to touch my website to add newer projects. I just have to make sure
+    the Gitbub repo is public and has the README.website.md file. This file is
+    in addition to the traditional README.md on most projects.
+  </h3>
+
+  <ul>
+    {
+      contentList.length != 0 ? (
+        contentList.map((value, index, array) => {
+          return (
+            <div>
+              <article set:html={value} /> <hr />{" "}
+            </div>
+          );
+        })
+      ) : (
+        <h1>Could not load projects 🙃</h1>
+      )
+    }
+  </ul>
+</section>
+
+<style>
+  h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: unset;
+    background-color: lightcyan;
+    padding: 5px;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time {
+    flex: 0 0 130px;
+    font-style: italic;
+    color: #595959;
+  }
+  ul li a:visited {
+    color: #8e32dc;
+  }
+</style>

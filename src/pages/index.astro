@@ -1,39 +1,41 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ProjectSection from "../components/ProjectSection.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
-<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<p>
-				Welcome to my personal website where I will tell my programming story.
-				This is this page will work as the Table of Context for my site where you can read descriptions on each page. 
-			</p>
-			<h2>Projects</h2>
-			<p>
-				This is the page where I will post my project with descriptions and links to my code. 
-			</p>
-			<h2>About Me</h2>
-			<p>
-				This is the page and will work as the Table of Context for my site. 
-			</p>
-			<h2>Github</h2>
-			<p>
-				This is a external link for my Github account. 
-			</p>
-			<h2>Linkedin</h2>
-			<p>
-				This is a external link for my Linkedin account. 
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>What is the goal of this site?</h1>
+      <p>
+        My intention is to provide a place where I can showcase my skillset and
+        projects to job recruiters, family and friends.
+      </p>
+      <ProjectSection client:load />
+    </main>
+    <Footer />
+    <style>
+      h1 {
+        opacity: 0.5;
+      }
+      hr {
+        border-top: 8px solid black;
+        border-radius: 5px;
+      }
+      main {
+        text-align: center;
+      }
+      button {
+        width: 20ch;
+        height: 5ch;
+      }
+    </style>
+  </body>
 </html>
