@@ -22,7 +22,6 @@ async function getAllRepos() {
       "https://api.github.com/users/TextuarySolid45/repos?sort=created&direction=desc"
     );
     const status = allPublicReposResponse.status;
-    console.info(allPublicReposResponse.json());
     return status == 200 ? await allPublicReposResponse.json() : null;
   } catch (error) {
     console.error(error);
@@ -37,7 +36,7 @@ if (allRepos != null) {
   for (var repo of allRepos) {
     const content = await getReadMe(repo.name);
     if (content) {
-      console.log(content);
+      // console.log(content);
       contentList.push(content);
     } else {
       console.log("null content");
@@ -47,7 +46,7 @@ if (allRepos != null) {
 ---
 
 <section>
-  <h1>Projects</h1>
+  <h1 class="white-text">Projects</h1>
   <button id="buttons">What is going on here?</button>
   <script>
     function handleClick() {
@@ -77,13 +76,13 @@ if (allRepos != null) {
       contentList.length != 0 ? (
         contentList.map((value, index, array) => {
           return (
-            <div>
+            <div style="color">
               <article set:html={value} /> <hr />{" "}
             </div>
           );
         })
       ) : (
-        <h1 class="black-text">Could not load projects 🙃</h1>
+        <h1>Could not load projects 🙃</h1>
       )
     }
   </ul>
@@ -93,22 +92,16 @@ if (allRepos != null) {
   h1 {
     margin: 0 auto;
     text-align: center;
+    color: black;
   }
   ul {
     list-style-type: none;
     padding: unset;
-    background-color: lightcyan;
     padding: 5px;
   }
-  ul li {
-    display: flex;
-  }
+
   ul li time {
     flex: 0 0 130px;
     font-style: italic;
-    color: #595959;
-  }
-  ul li a:visited {
-    color: #8e32dc;
   }
 </style>

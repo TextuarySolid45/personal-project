@@ -72,6 +72,10 @@ pre {
 pre > code {
 	all: unset;
 }
+ul {
+	background-color: var(--secondary);
+	color: black;
+}
 blockquote {
 	border: 1px solid #999;
 	color: #222;
@@ -80,6 +84,6 @@ blockquote {
 	font-style: italic;
 }
 
-.black-text{
-	color:black;
+.white-text{
+	color: var(--secondary);
 }
