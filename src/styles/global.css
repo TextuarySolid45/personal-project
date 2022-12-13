@@ -4,9 +4,9 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 :root {
-	--primary: lightblue;
-	--secondary: red;
-	--text-color: black;
+	--primary: #333;
+	--secondary: #ddd;
+	--text-color: #ddd;
 	--max-width: 65ch;
 }
 
@@ -23,9 +23,15 @@ body {
 	line-height: 1.5;
 	color: var(--text-color);
 }
-h1,
-h2,
-h3,
+h1{
+	color: var(--text-color);
+}	
+h2{
+	color: var(--text-color);
+}	
+h3{
+	color: var(--text-color);
+}
 h4,
 h5,
 h6,
@@ -34,7 +40,7 @@ b {
 	color: #222;
 }
 a {
-	color: #3273dc;
+	color: darkgray;
 }
 nav a {
 	margin-right: 10px;
@@ -72,4 +78,8 @@ blockquote {
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
+}
+
+.black-text{
+	color:black;
 }
