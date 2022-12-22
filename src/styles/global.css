@@ -10,13 +10,14 @@
 	--max-width: 65ch;
 }
 
-
+html{
+	scroll-behavior: smooth;
+}
 body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 20px;
 	max-width: var(--max-width);
-	text-align: left;
 	background-color: var(--primary);
 	word-wrap: break-word;
 	overflow-wrap: break-word;

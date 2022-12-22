@@ -3,37 +3,16 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../config";
 ---
 
-<header>
-  <nav>
-    <HeaderLink
-      imageSrc="../../public/github.png"
-      href="https://github.com/TextuarySolid45"
-      target="_blank">GitHub</HeaderLink
-    >
-    <HeaderLink
-      href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
-      target="_blank">Linkedin</HeaderLink
-    >
-  </nav>
-  <h2>
-    {SITE_TITLE}
-  </h2>
-</header>
-<style>
-  header {
-    border-radius: 1em;
-    padding: 1em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-  }
-  h2 {
-    height: 10em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: ;
-  }
-</style>
+<nav>
+  <HeaderLink
+    imageSrc="../../public/github.jpg"
+    href="https://github.com/TextuarySolid45"
+    target="_blank">GitHub</HeaderLink
+  >
+  <HeaderLink
+    imageSrc="../../public/linkedin.png"
+    href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
+    target="_blank">Linkedin</HeaderLink
+  >
+</nav>
+<style></style>
