@@ -24,7 +24,7 @@ body {
 	color: var(--text-color);
 }
 h1{
-	color: black;
+	color: var(--text-color);
 }	
 h2{
 	color: var(--text-color);
@@ -73,8 +73,8 @@ pre > code {
 	all: unset;
 }
 ul {
-	background-color: var(--secondary);
-	color: black;
+	background-color: var(--primary);
+	color:  var(--secondary);
 }
 blockquote {
 	border: 1px solid #999;
