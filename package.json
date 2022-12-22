@@ -18,6 +18,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@nanostores/react": "^0.4.0",
     "@types/react-dom": "^18.0.9",
+    "aos": "^2.3.4",
     "astro": "^1.6.13",
     "marked": "^4.2.4",
     "nanostores": "^0.7.1",
@@ -25,6 +26,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/marked": "^4.0.7",
     "@types/react": "^18.0.26",
     "prettier": "^2.8.1",

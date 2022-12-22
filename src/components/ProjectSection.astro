@@ -36,7 +36,7 @@ if (allRepos != null) {
   for (var repo of allRepos) {
     const content = await getReadMe(repo.name);
     if (content) {
-      // console.log(content);
+      console.log(content);
       contentList.push(content);
     } else {
       console.log("null content");
@@ -46,43 +46,24 @@ if (allRepos != null) {
 ---
 
 <section>
-  <h1 class="white-text">Projects</h1>
-  <button id="buttons">What is going on here?</button>
+  <h1 style="font-size:xx-large ;" data-aos="zoom-in-up">My Public Projects</h1>
   <script>
-    function handleClick() {
-      var x = document.getElementById("projectSection");
-      if (x.style.display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-      console.log("button clicked.");
-    }
-    let doc = document.getElementById("buttons");
-    if (doc) {
-      doc.addEventListener("click", handleClick);
-    }
-  </script>
-  <h3 id="projectSection" style="display : none;">
-    Below are a list of ReadMe.md files that I pull from all the PUBLIC
-    repositories in my Github account. The reason I did this was so that I do
-    not have to touch my website to add newer projects. I just have to make sure
-    the Gitbub repo is public and has the README.website.md file. This file is
-    in addition to the traditional README.md on most projects.
-  </h3>
+    import Aos from "aos";
 
+    Aos.init({ duration: 1500 });
+  </script>
   <ul>
     {
       contentList.length != 0 ? (
         contentList.map((value, index, array) => {
           return (
-            <div style="color">
-              <article set:html={value} /> <hr />{" "}
+            <div data-aos="zoom-in-right">
+              <article class="white-text" set:html={value} />
             </div>
           );
         })
       ) : (
-        <h1>Could not load projects 🙃</h1>
+        <h1 data-aos="zoom-in-left">Could not load projects 🙃</h1>
       )
     }
   </ul>
@@ -92,7 +73,6 @@ if (allRepos != null) {
   h1 {
     margin: 0 auto;
     text-align: center;
-    color: black;
   }
   ul {
     list-style-type: none;
@@ -103,5 +83,8 @@ if (allRepos != null) {
   ul li time {
     flex: 0 0 130px;
     font-style: italic;
+  }
+  section {
+    padding-top: 100ch;
   }
 </style>

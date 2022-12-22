@@ -1,6 +1,5 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import ProjectSection from "../components/ProjectSection.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
@@ -9,30 +8,93 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
+
   <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <h1 class="white-text">What is the goal of this site?</h1>
-      <p>
-        My intention is to provide a place where I can showcase my skillset and
-        projects to job recruiters, family and friends.
-      </p>
-      <ProjectSection />
-    </main>
+    <header>
+      <h1>
+        {SITE_TITLE}
+      </h1>
+      <svg class="arrows">
+        <path class="a1" d="M0 0 L30 32 L60 0"></path>
+        <path class="a2" d="M0 20 L30 52 L60 20"></path>
+        <path class="a3" d="M0 40 L30 72 L60 40"></path>
+      </svg>
+    </header>
+    <ProjectSection />
     <Footer />
     <style>
-      hr {
-        border-top: 8px solid black;
-        border-radius: 5px;
+      header {
+        font-size: xx-large;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
       }
-      main {
-        text-align: center;
+      .arrows {
+        width: 60px;
+        height: 72px;
+        position: absolute;
+        left: 50%;
+        margin-left: -30px;
+        bottom: -150px;
       }
-      button {
-        width: 20ch;
-        height: 5ch;
-        color: black;
+
+      .arrows path {
+        stroke: #ddd;
+        fill: transparent;
+        stroke-width: 1px;
+        animation: arrow 2s infinite;
+        -webkit-animation: arrow 2s infinite;
+      }
+
+      @keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes arrow {
+        0% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+        }
+        80% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .arrows path.a1 {
+        animation-delay: -1s;
+        -webkit-animation-delay: -1s;
+      }
+
+      .arrows path.a2 {
+        animation-delay: -0.5s;
+        -webkit-animation-delay: -0.5s;
+      }
+
+      .arrows path.a3 {
+        animation-delay: 0s;
+        -webkit-animation-delay: 0s;
       }
     </style>
   </body>
