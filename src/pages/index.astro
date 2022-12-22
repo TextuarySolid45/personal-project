@@ -9,11 +9,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+      import Aos from "aos";
+
+      Aos.init({ duration: 1500 });
+    </script>
   </head>
 
   <body>
     <header>
-      <h1>
+      <h1 data-aos="zoom-in-right">
         {SITE_TITLE}
       </h1>
       <svg class="arrows">
