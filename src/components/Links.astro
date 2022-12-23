@@ -3,16 +3,24 @@ import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../config";
 ---
 
-<nav>
-  <HeaderLink
-    imageSrc="../../public/github.jpg"
-    href="https://github.com/TextuarySolid45"
-    target="_blank">GitHub</HeaderLink
-  >
-  <HeaderLink
-    imageSrc="../../public/linkedin.png"
-    href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
-    target="_blank">Linkedin</HeaderLink
-  >
-</nav>
-<style></style>
+<header>
+  <nav>
+    <HeaderLink
+      imageSrc="../../public/github.jpg"
+      href="https://github.com/TextuarySolid45"
+      target="_blank">GitHub</HeaderLink
+    >
+    <HeaderLink
+      imageSrc="../../public/linkedin.png"
+      href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
+      target="_blank">Linkedin</HeaderLink
+    >
+  </nav>
+</header>
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+</style>
