@@ -4,17 +4,21 @@ import { SITE_TITLE } from "../config";
 ---
 
 <header>
-  <nav>
-    <HeaderLink
-      imageSrc="../../public/github.jpg"
-      href="https://github.com/TextuarySolid45"
-      target="_blank">GitHub</HeaderLink
-    >
-    <HeaderLink
-      imageSrc="../../public/linkedin.png"
-      href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
-      target="_blank">Linkedin</HeaderLink
-    >
+  <nav class="hover">
+    <div data-aos="fade-up-left">
+      <HeaderLink
+        imageSrc="../../public/github.jpg"
+        href="https://github.com/TextuarySolid45"
+        target="_blank">GitHub</HeaderLink
+      >
+    </div>
+    <div data-aos="fade-up-right">
+      <HeaderLink
+        imageSrc="../../public/linkedin.png"
+        href="https://www.linkedin.com/in/gabriel-lopez-1239a41a4/"
+        target="_blank">Linkedin</HeaderLink
+      >
+    </div>
   </nav>
 </header>
 <style>
@@ -22,5 +26,9 @@ import { SITE_TITLE } from "../config";
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+  nav {
+    display: flex;
+    padding-top: 5ch;
   }
 </style>

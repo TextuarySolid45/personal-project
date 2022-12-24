@@ -57,7 +57,10 @@ if (allRepos != null) {
       contentList.length != 0 ? (
         contentList.map((value, index, array) => {
           return (
-            <div data-aos="zoom-in-right">
+            <div
+              data-aos="zoom-in-right"
+              style="padding-top: 5%;padding-bottom: 5%;"
+            >
               <article class="white-text" set:html={value} />
             </div>
           );
