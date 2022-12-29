@@ -88,3 +88,7 @@ blockquote {
 .white-text{
 	color: var(--secondary);
 }
+
+section {
+	padding-bottom: 50ch;
+}

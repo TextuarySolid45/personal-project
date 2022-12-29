@@ -30,13 +30,11 @@ async function getAllRepos() {
 }
 
 const allRepos = await getAllRepos();
-console.log(allRepos);
 var contentList: string[] = [];
 if (allRepos != null) {
   for (var repo of allRepos) {
     const content = await getReadMe(repo.name);
     if (content) {
-      console.log(content);
       contentList.push(content);
     } else {
       console.log("null content");
@@ -47,11 +45,6 @@ if (allRepos != null) {
 
 <section>
   <h1 style="font-size:xx-large ;" data-aos="zoom-in-up">My Public Projects</h1>
-  <script>
-    import Aos from "aos";
-
-    Aos.init({ duration: 1500 });
-  </script>
   <ul>
     {
       contentList.length != 0 ? (
@@ -86,8 +79,5 @@ if (allRepos != null) {
   ul li time {
     flex: 0 0 130px;
     font-style: italic;
-  }
-  section {
-    padding-top: 100ch;
   }
 </style>

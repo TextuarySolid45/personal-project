@@ -1,0 +1,41 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+
+export interface Props {
+  content: {
+    company: string;
+    position: string;
+    client: string;
+    ProjectName?: string;
+    ProjectDescription?: string;
+    CICD?: string;
+    CloudProvider?: string;
+    RoleOnProject?: string;
+  };
+}
+
+const {
+  content: {
+    company,
+    position,
+    client,
+    ProjectName,
+    ProjectDescription,
+    CICD,
+    CloudProvider,
+    RoleOnProject,
+  },
+} = Astro.props;
+---
+
+<article>
+  <h1>{company}</h1>
+  <h2>{position}</h2>
+  <h2>{client}</h2>
+  <h2>{ProjectName}</h2>
+  <h2>{ProjectDescription}</h2>
+  <h2>{CICD}</h2>
+  <h2>{CloudProvider}</h2>
+  <h2>{RoleOnProject}</h2>
+  <slot />
+</article>

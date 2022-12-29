@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import ProjectSection from "../components/ProjectSection.astro";
 import Links from "../components/Links.astro";
 import Header from "../components/Header.astro";
+import ProProjectsSection from "../components/ProProjectsSection.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
@@ -14,16 +15,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
     <script>
       import Aos from "aos";
 
-      Aos.init({ duration: 1500 });
+      Aos.init({ duration: 2000 });
     </script>
   </head>
   <body>
     <Links />
     <Header />
-    <section>
-      <ProjectSection />
-      <Footer />
-    </section>
+    <ProProjectsSection />
+    <ProjectSection />
+    <Footer />
     <style></style>
   </body>
 </html>
