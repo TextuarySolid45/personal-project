@@ -12,13 +12,14 @@
 
 html{
 	scroll-behavior: smooth;
+	
 }
 body {
-	font-family: Verdana, sans-serif;
+	font-family: "Times New Roman";
 	margin: auto;
 	padding: 20px;
 	max-width: var(--max-width);
-	background-color: var(--primary);
+	background-image: linear-gradient(to top right,gray,var(--primary));
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
