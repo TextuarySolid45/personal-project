@@ -68,7 +68,6 @@ pre > code {
 	all: unset;
 }
 ul {
-	background-color: var(--primary);
 	color:  var(--secondary);
 }
 blockquote {
