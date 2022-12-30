@@ -1,12 +1,12 @@
 ---
-const { imageSrc, href, class: className, ...props } = Astro.props;
+const { styleProp, imageSrc, href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
-  <img src={imageSrc} alt="" style="width:100px;height:100px;" />
+  <img src={imageSrc} alt="" style={styleProp} />
 </a>
 <style>
   img {

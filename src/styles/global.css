@@ -30,13 +30,6 @@ h1{
 h2{
 	color: var(--text-color);
 }	
-h3{
-	color: var(--text-color);
-}
-h4,
-h5,
-h6,
-strong,
 b {
 	color: #222;
 }
@@ -90,5 +83,5 @@ blockquote {
 }
 
 section {
-	padding-bottom: 50ch;
+	padding-bottom: 25ch;
 }

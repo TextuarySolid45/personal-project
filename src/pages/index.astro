@@ -5,6 +5,8 @@ import ProjectSection from "../components/ProjectSection.astro";
 import Links from "../components/Links.astro";
 import Header from "../components/Header.astro";
 import ProProjectsSection from "../components/ProProjectsSection.astro";
+import SkillSection from "../components/SkillSection.astro";
+import { Content as AboutMe } from "../components/AboutMe.md";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
@@ -21,8 +23,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
   <body>
     <Links />
     <Header />
+    <SkillSection />
     <ProProjectsSection />
     <ProjectSection />
+    <AboutMe />
     <Footer />
     <style></style>
   </body>

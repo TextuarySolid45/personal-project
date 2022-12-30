@@ -1,4 +1,5 @@
 ---
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <script>
@@ -7,26 +8,56 @@
   Aos.init({ duration: 1500 });
 </script>
 <section>
-  <div>
-    <h1 data-aos="zoom-in-up">Skills</h1>
-
-    <h2 data-aos="zoom-in-up">Client</h2>
-    <h3 data-aos="zoom-in-up">Verys</h3>
-    <h2 data-aos="zoom-in-up">Project Name</h2>
-    <h3 data-aos="zoom-in-up">Shelby</h3>
+  <h1 style="font-size: xx-large;" data-aos="zoom-in-up">Certifications</h1>
+  <div style="padding: 1ch 25% 1ch 25%;" data-aos="fade-up-right">
+    <HeaderLink
+      imageSrc="devops.png"
+      href="https://www.credly.com/badges/547f6b90-a077-4c80-9e0f-63b497d0b439/public_url"
+      target="_blank"
+      styleProp=""
+      >AWS Certified DevOps Engineer - Professional
+    </HeaderLink>
   </div>
+  <div style="padding: 1ch 25% 1ch 25%;" class="right" data-aos="fade-up-left">
+    <HeaderLink
+      imageSrc="developer.png"
+      href="https://www.credly.com/badges/89485984-6ba5-497a-9b5a-25801f9c0850/public_url"
+      target="_blank"
+      styleProp=""
+      >AWS Certified Developer - Associate
+    </HeaderLink>
+  </div>
+
+  <h1 data-aos="fade-up-left" style="padding-top: 10ch ;padding-bottom: 5ch ;">
+    Personal Favorite Tools/Opinions
+  </h1>
+  <h1 data-aos="fade-up-left">Cloud Provider</h1>
+  <h2 data-aos="fade-up-left">AWS</h2>
+  <h1 data-aos="fade-up-left">IDE</h1>
+  <h2 data-aos="fade-up-left">JetBrains</h2>
+  <h1 data-aos="fade-up-left">Languages</h1>
+  <h2 data-aos="fade-up-left">FrontEnd: Javascript/TypeScript</h2>
+  <h2 data-aos="fade-up-left">Backend: PHP</h2>
+  <h1 data-aos="fade-up-left">Variable Casing</h1>
+  <h2 data-aos="fade-up-left">snakeCase</h2>
+  <h1 data-aos="fade-up-left">Tabs vs Spaces</h1>
+  <h2 data-aos="fade-up-left">Tabs</h2>
 </section>
 <style>
   h1 {
     margin: 0 auto;
     text-align: center;
-    padding-bottom: 10ch;
+    padding-bottom: 1ch;
   }
-  h2,
+  h2 {
+    color: gray;
+    text-align: center;
+  }
   h3 {
     margin: 0 auto;
-    text-align: center;
-    padding-top: 1ch;
-    padding-bottom: 1ch;
+    padding: 1ch 25% 1ch 25%;
+  }
+  section {
+    padding-top: 75ch;
   }
 </style>
